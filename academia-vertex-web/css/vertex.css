@@ -1,0 +1,124 @@
+:root{--blue:#1a5fb4;--blue-dark:#0d2f6b;--gold:#f5a623;--ink:#1b2433;--soft:#eef4fd}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:'Poppins',sans-serif;color:var(--ink)}
+.vx-nav{background:var(--blue-dark)}
+.vx-logo,.vx-title,.vx-h2,.vx-stats strong{font-family:'Orbitron',sans-serif}
+.vx-logo{letter-spacing:.12em;font-weight:800;color:var(--gold)!important}
+.btn-gold{background:var(--gold);color:var(--blue-dark);font-weight:600;border:0}
+.btn-gold:hover,.btn-gold:focus{background:#ffb93e;color:var(--blue-dark)}
+.vx-hero{min-height:100vh;padding-top:80px;color:#fff;background:linear-gradient(135deg,var(--blue-dark),var(--blue))}
+.vx-title{font-weight:800;font-size:clamp(2.2rem,7vw,4.5rem)}
+.vx-slogan{color:var(--gold);font-weight:500}
+.vx-lead{max-width:620px;margin-bottom:1.5rem}
+.vx-stats{background:var(--gold);color:var(--blue-dark);padding:1.5rem 0}
+.vx-stats strong{display:block;font-size:clamp(1.4rem,4vw,2.2rem)}
+.vx-stats span{font-size:.85rem}
+.vx-h2{color:var(--blue-dark);font-weight:800}
+.vx-alt{background:var(--soft)}
+.vx-card{border:0;border-radius:14px;box-shadow:0 4px 18px rgba(13,47,107,.12);cursor:pointer;height:100%;text-align:left;width:100%;padding:1.25rem}
+.vx-card:hover,.vx-card:focus-visible{transform:translateY(-4px);box-shadow:0 8px 24px rgba(13,47,107,.2)}
+.vx-card{transition:transform .2s,box-shadow .2s}
+.vx-emoji{font-size:2.2rem}
+.vx-card h3{font-size:1.1rem;color:var(--blue-dark);margin:.5rem 0}
+.vx-card p{font-size:.9rem;color:#555;margin:0}
+.vx-footer{background:var(--blue-dark);color:#fff}
+.vx-wa{position:fixed;right:18px;bottom:18px;width:58px;height:58px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.3);z-index:1030}
+.form-control:focus,.btn:focus-visible,.vx-card:focus-visible{outline:3px solid var(--gold);outline-offset:2px;box-shadow:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.vx-card{transition:none}}
+
+.vx-wa{bottom:90px}
+.vx-chat-btn{position:fixed;right:18px;bottom:18px;width:58px;height:58px;border-radius:50%;border:0;background:var(--blue);color:#fff;font-size:1.6rem;box-shadow:0 4px 14px rgba(0,0,0,.3);z-index:1030}
+.vx-chat{position:fixed;right:18px;bottom:90px;width:min(340px,calc(100vw - 36px));background:#fff;border-radius:14px;box-shadow:0 8px 28px rgba(0,0,0,.28);z-index:1040;overflow:hidden}
+.vx-chat[hidden],#testimonios[hidden]{display:none}
+.vx-chat-head{background:var(--blue-dark);color:#fff;padding:.7rem 1rem;font-family:'Orbitron',sans-serif;font-size:.9rem}
+.vx-chat-log{height:240px;overflow-y:auto;padding:.75rem;display:flex;flex-direction:column;gap:.5rem;font-size:.88rem}
+.vx-msg{max-width:85%;padding:.5rem .75rem;border-radius:12px}
+.vx-msg.bot{background:var(--soft);align-self:flex-start}
+.vx-msg.yo{background:var(--blue);color:#fff;align-self:flex-end}
+.vx-chat.show{display:block}
+
+.vx-foto{width:100%;height:150px;object-fit:cover;border-radius:10px;margin-bottom:.5rem}
+.vx-foto-modal{width:100%;max-height:260px;object-fit:cover;border-radius:10px;margin-bottom:1rem}
+.vx-prof{width:180px;height:180px;object-fit:cover;border-radius:50%;border:4px solid var(--gold);display:block}
+.vx-res{width:100%;height:240px;object-fit:cover;object-position:top;border-radius:10px;border:0;cursor:pointer;box-shadow:0 4px 14px rgba(13,47,107,.15)}
+#resultados[hidden]{display:none}
+
+#logoImg{height:60px;width:auto;object-fit:contain;padding:4px 12px;background:#fff;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+
+.vx-nav{padding:.5rem 0}
+.vx-hero{position:relative;overflow:hidden;padding-top:100px;background:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px) 0 0/44px 44px,linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px) 0 0/44px 44px,linear-gradient(135deg,var(--blue-dark),var(--blue));animation:vxgrid 40s linear infinite}
+@keyframes vxgrid{to{background-position:44px 44px,44px 44px,0 0}}
+.vx-hero .container{position:relative;z-index:1}
+.vx-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+#fondoPagina{position:fixed;z-index:-1}
+body{background-color:#fff;background-image:linear-gradient(rgba(26,95,180,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(26,95,180,.06) 1px,transparent 1px);background-size:36px 36px}
+.vx-alt{background:rgba(238,244,253,.75)}
+@media (max-width:576px){#logoImg{height:48px}}
+@media (prefers-reduced-motion:reduce){.vx-hero{animation:none}}
+
+.vx-carrusel{background:var(--blue-dark);border-radius:14px;padding:1.25rem 0 3rem;max-width:760px;margin:0 auto;box-shadow:0 6px 22px rgba(13,47,107,.25)}
+.vx-slide{max-height:460px;max-width:78%;object-fit:contain;border-radius:8px;cursor:zoom-in}
+.vx-carrusel .carousel-indicators{margin-bottom:.9rem}
+.vx-carrusel .carousel-indicators [data-bs-target]{background-color:var(--gold)}
+
+/* Barra superior clara: el logo (fondo blanco) se integra sin recuadro */
+.vx-nav{background:#fff;min-height:76px;box-shadow:0 2px 14px rgba(13,47,107,.18)}
+.vx-nav .navbar-brand{padding:0}
+.vx-nav .nav-link{color:var(--blue-dark);font-weight:500}
+.vx-nav .nav-link:hover,.vx-nav .nav-link:focus{color:var(--blue)}
+.vx-logo{color:var(--blue-dark)!important}
+#logoImg{height:100px;width:auto;margin:-20px 10px -20px 0;padding:0;background:none;border-radius:0;box-shadow:none;clip-path:inset(20px 0);mix-blend-mode:multiply}
+@media (max-width:576px){#logoImg{height:80px;margin:-14px 6px -14px 0;clip-path:inset(14px 0)}}
+
+/* Fondo general azul, continuación de la portada */
+body{background-color:#0d2f6b;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(180deg,#14498f 0%,#0d2f6b 100%);background-size:36px 36px,36px 36px,100% 100%}
+#carreras,#profesor,#resultados,#contacto,#testimonios{color:#e8eefb}
+section .vx-h2{color:#fff}
+section .text-muted{color:rgba(255,255,255,.75)!important}
+#profesor h3{color:#fff}
+.vx-alt{background:rgba(255,255,255,.07)}
+.vx-card{color:var(--ink)}
+.vx-chat,.modal-content{color:var(--ink)}
+#formContacto{background:#fff;color:var(--ink);padding:1.5rem;border-radius:14px;box-shadow:0 8px 28px rgba(0,0,0,.25)}
+.vx-carrusel{border:1px solid rgba(245,166,35,.45)}
+
+/* Azul intermedio, más suave */
+body{background-color:#1f5399;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(180deg,#2a6bb7 0%,#1f5399 100%)}
+.vx-hero{background:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px) 0 0/44px 44px,linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px) 0 0/44px 44px,linear-gradient(135deg,#1f5399,#3377c9)}
+section .text-muted{color:rgba(255,255,255,.88)!important}
+.vx-alt{background:rgba(255,255,255,.1)}
+.vx-footer{background:#1b4a8c}
+
+/* Azul aún más suave (menos saturado) */
+body{background-color:#35649f;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(180deg,#3f73b0 0%,#35649f 100%)}
+.vx-hero{background:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px) 0 0/44px 44px,linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px) 0 0/44px 44px,linear-gradient(135deg,#35649f,#4a82c2)}
+.vx-footer{background:#2c5690}
+
+/* Franja de estadísticas: azul profundo en lugar de amarillo */
+.vx-stats{background:#1f4a82;color:rgba(255,255,255,.88);border-top:1px solid rgba(255,255,255,.2);border-bottom:1px solid rgba(255,255,255,.2)}
+.vx-stats strong{color:#fff}
+
+/* Paleta sin amarillo: acento celeste claro + botones azules/blancos */
+:root{--gold:#bfe3ff}
+.btn-gold{background:#1f5399;color:#fff;border:0}
+.btn-gold:hover,.btn-gold:focus{background:#2a6bb7;color:#fff}
+.vx-hero .btn-gold{background:#fff;color:#1f4a82}
+.vx-hero .btn-gold:hover,.vx-hero .btn-gold:focus{background:#e3f1ff;color:#1f4a82}
+.vx-slogan{color:#bfe3ff}
+.vx-carrusel{border-color:rgba(191,227,255,.5)}
+
+/* Carrusel: efecto vidrio que combina con el fondo */
+.vx-carrusel{background:rgba(255,255,255,.14);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.35);box-shadow:0 8px 26px rgba(15,45,95,.25)}
+.vx-carrusel .carousel-indicators [data-bs-target]{background-color:#fff}
+.vx-slide{box-shadow:0 6px 18px rgba(15,45,95,.35)}
+
+/* Formulario con más color y vida */
+#formContacto{position:relative;overflow:hidden;background:linear-gradient(180deg,#fff 0%,#eef5ff 100%);padding:2rem 1.75rem 1.75rem;border-radius:16px;box-shadow:0 12px 34px rgba(10,35,80,.35)}
+#formContacto::before{content:"";position:absolute;inset:0 0 auto 0;height:7px;background:linear-gradient(90deg,#1f5399,#3f8de0,#9bd5ff)}
+#formContacto .form-label{font-weight:600;color:#1f4a82;font-size:.92rem}
+#formContacto .form-control{background:#f2f7ff;border:1.5px solid #bcd3f0;border-radius:10px;padding:.65rem .9rem;transition:border-color .2s,box-shadow .2s,background .2s}
+#formContacto .form-control:hover{border-color:#7fa8dc}
+#formContacto .form-control:focus{background:#fff;border-color:#2a6bb7;box-shadow:0 0 0 .22rem rgba(42,107,183,.22);outline:none}
+#btnEnviar{width:100%;padding:.8rem;border-radius:12px;background:linear-gradient(135deg,#1f5399,#3f8de0);box-shadow:0 6px 16px rgba(31,83,153,.4);transition:transform .15s,box-shadow .15s}
+#btnEnviar:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 22px rgba(31,83,153,.5)}
+@media (prefers-reduced-motion:reduce){#btnEnviar{transition:none}#btnEnviar:hover:not(:disabled){transform:none}}

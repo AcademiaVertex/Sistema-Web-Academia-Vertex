@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://formspree.io; form-action https://formspree.io; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Academia Vertex | Apoyo universitario</title>
+<meta name="description" content="Clases de apoyo universitario presenciales y virtuales: ingeniería, arquitectura, medicina, ciencias económicas y software.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link href="css/vertex.css" rel="stylesheet">
+</head>
+<body>
+<canvas id="fondoPagina" class="vx-canvas" aria-hidden="true"></canvas>
+<nav class="navbar navbar-expand-lg navbar-light fixed-top vx-nav">
+  <div class="container">
+    <a class="navbar-brand vx-logo d-flex align-items-center" href="#inicio"><img id="logoImg" alt="Academia Vertex" class="me-2" hidden><span id="logoTxt">VERTEX</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+        <li class="nav-item"><a class="nav-link" href="#carreras">Carreras</a></li>
+        <li class="nav-item"><a class="nav-link" href="#profesor">Profesor</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        <li class="nav-item"><a class="btn btn-gold btn-sm" href="https://wa.me/5493624505465" target="_blank" rel="noopener noreferrer">Escribinos por WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header id="inicio" class="vx-hero d-flex align-items-center">
+  <canvas id="fondoHero" class="vx-canvas" aria-hidden="true"></canvas>
+  <div class="container">
+    <h1 class="vx-title">Academia Vertex</h1>
+    <p class="lead vx-slogan">Compromiso, experiencia y resultados.</p>
+    <p class="vx-lead">Más de 30 años acompañando estudiantes universitarios en ingeniería, arquitectura, ciencias económicas, medicina y desarrollo de software. Clases presenciales y virtuales.</p>
+    <a href="#carreras" class="btn btn-gold btn-lg me-2">Ver carreras</a>
+    <a href="https://wa.me/5493624505465?text=Hola%2C%20quiero%20info%20sobre%20las%20clases" class="btn btn-outline-light btn-lg" target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+  </div>
+</header>
+
+<section class="vx-stats">
+  <div class="container"><div class="row text-center g-3">
+    <div class="col-4"><strong>+30</strong><span>años de experiencia</span></div>
+    <div class="col-4"><strong>+2000</strong><span>alumnos aprobados</span></div>
+    <div class="col-4"><strong>+20</strong><span>materias dictadas</span></div>
+  </div></div>
+</section>
+
+<section id="carreras" class="py-5">
+  <div class="container">
+    <h2 class="vx-h2">Carreras</h2>
+    <p class="text-muted mb-4">Tocá una carrera para ver el detalle, las universidades y las materias.</p>
+    <div class="row g-4" id="listaCarreras"></div>
+  </div>
+</section>
+
+<section id="testimonios" class="py-5" hidden>
+  <div class="container"><h2 class="vx-h2 mb-4">Testimonios</h2><div class="row g-4" id="listaTestimonios"></div></div>
+</section>
+
+<section id="profesor" class="py-5 vx-alt">
+  <div class="container">
+    <div class="row justify-content-center"><div class="col-lg-8">
+      <img id="fotoProfesor" class="vx-prof mb-3" alt="Foto del profesor Jorge Toncheff" hidden>
+      <h2 class="vx-h2">Sobre el profesor</h2>
+      <h3 class="h5 mt-3">Jorge Toncheff</h3>
+      <p class="text-muted">Ingeniería, desarrollo de software y matemáticas</p>
+      <p>Una metodología basada en la claridad conceptual, la práctica constante y el seguimiento personalizado de cada estudiante. Hoy trabaja en modalidad presencial y virtual, con el mismo nivel de acompañamiento.</p>
+    </div></div>
+  </div>
+</section>
+
+<section id="resultados" class="py-5 vx-alt" hidden>
+  <div class="container"><h2 class="vx-h2">Lo que dicen nuestros alumnos</h2><p class="text-muted mb-4">Mensajes de alumnos que aprobaron sus materias.</p><div class="row g-3" id="listaResultados"></div></div>
+</section>
+
+<section id="contacto" class="py-5">
+  <div class="container">
+    <div class="row justify-content-center"><div class="col-lg-7">
+      <h2 class="vx-h2">Contacto</h2>
+      <p class="text-muted">Dejanos tu consulta y te respondemos a la brevedad.</p>
+      <form id="formContacto" action="https://formspree.io/f/xoeezlwy" method="POST" novalidate>
+        <div class="mb-3"><label class="form-label" for="nombre">Nombre</label><input class="form-control" id="nombre" name="nombre" maxlength="80" required autocomplete="name"></div>
+        <div class="row">
+          <div class="col-md-6 mb-3"><label class="form-label" for="email">Correo</label><input class="form-control" type="email" id="email" name="email" maxlength="120" required autocomplete="email"></div>
+          <div class="col-md-6 mb-3"><label class="form-label" for="telefono">Teléfono</label><input class="form-control" type="tel" id="telefono" name="telefono" maxlength="25" autocomplete="tel"></div>
+        </div>
+        <div class="mb-3"><label class="form-label" for="carrera">Carrera o materia</label><input class="form-control" id="carrera" name="carrera" maxlength="100"></div>
+        <div class="mb-3"><label class="form-label" for="mensaje">Mensaje</label><textarea class="form-control" id="mensaje" name="mensaje" rows="4" maxlength="1000" required></textarea></div>
+        <input type="text" name="_gotcha" class="d-none" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn-gold btn-lg" type="submit" id="btnEnviar">Enviar consulta</button>
+        <div id="estadoForm" class="mt-3" role="status" aria-live="polite"></div>
+      </form>
+    </div></div>
+  </div>
+</section>
+
+<footer class="vx-footer text-center py-4">
+  <p class="mb-1">Academia Vertex &middot; academiavertex26@gmail.com</p>
+  <small>&copy; 2026 Academia Vertex</small>
+</footer>
+
+<a class="vx-wa" href="https://wa.me/5493624505465?text=Hola%2C%20quiero%20info%20sobre%20las%20clases" target="_blank" rel="noopener noreferrer" aria-label="Escribinos por WhatsApp">
+  <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><path fill="#fff" d="M16 3a13 13 0 0 0-11 19.8L3 29l6.400-2A13 13 0 1 0 16 3zm0 2.400a10.600 10.600 0 1 1-5.400 19.700l-.4-.2-3.800 1.200 1.200-3.700-.3-.4A10.600 10.600 0 0 1 16 5.400zm-4 5.500c-.3 0-.7.100-1 .5-.4.400-1.300 1.300-1.300 3.100s1.300 3.600 1.500 3.800c.2.200 2.600 4.100 6.400 5.600 3.200 1.200 3.800 1 4.500.9.700-.1 2.200-.9 2.500-1.800.3-.9.300-1.600.2-1.800-.1-.2-.4-.3-.8-.5s-2.200-1.100-2.500-1.200c-.3-.1-.6-.2-.8.200-.2.400-.9 1.200-1.100 1.400-.2.200-.4.300-.8.100-.4-.2-1.600-.6-3-1.900-1.100-1-1.900-2.200-2.100-2.600-.2-.4 0-.6.200-.8l.6-.7c.2-.2.200-.4.400-.6.100-.2.100-.5 0-.7l-1.100-2.700c-.3-.7-.6-.6-.8-.6z"/></svg>
+</a>
+
+<button class="vx-chat-btn" id="chatToggle" type="button" aria-label="Abrir asistente virtual">💬</button>
+<div class="vx-chat" id="chatPanel" hidden role="dialog" aria-label="Asistente virtual">
+  <div class="vx-chat-head">Asistente Vertex</div>
+  <div class="vx-chat-log" id="chatLog" aria-live="polite"></div>
+  <form class="d-flex gap-2 p-2" id="chatForm"><input class="form-control form-control-sm" id="chatInput" maxlength="200" placeholder="Escribí tu pregunta" aria-label="Tu pregunta" autocomplete="off"><button class="btn btn-gold btn-sm" type="submit">Enviar</button></form>
+</div>
+
+<div class="modal fade" id="modalFoto" tabindex="-1" aria-label="Mensaje de alumno" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content"><div class="modal-header border-0"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></div><div class="modal-body pt-0"><img id="fotoGrande" class="w-100" alt="Mensaje de un alumno"></div></div></div>
+</div>
+
+<div class="modal fade" id="modalCarrera" tabindex="-1" aria-labelledby="modalTitulo" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable"><div class="modal-content">
+    <div class="modal-header"><h2 class="modal-title h4 vx-h2" id="modalTitulo"></h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></div>
+    <div class="modal-body" id="modalCuerpo"></div>
+    <div class="modal-footer"><a id="modalWa" class="btn btn-gold" target="_blank" rel="noopener noreferrer" href="#">Consultar por esta carrera</a></div>
+  </div></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="js/datos.js"></script>
+<script src="js/fondo.js"></script>
+<script src="js/vertex.js"></script>
+</body>
+</html>
